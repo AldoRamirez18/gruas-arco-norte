@@ -1,217 +1,418 @@
 <!DOCTYPE html>
-<html class="light" lang="es">
+<html lang="es">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>GRÚAS ARCO NORTE | Asistencia Vial 24/7</title>
-    <meta name="description" content="Servicio de grúas y asistencia vial las 24 horas en la autopista Arco Norte. Rápidos, seguros y confiables.">
-    
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Work+Sans:wght@700;800;900&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                "primary": "#041627",
-                "secondary": "#904d00",
-                "surface": "#fbf9f8",
-                "on-surface": "#1b1c1c",
-                "surface-container-low": "#f6f3f2",
-                "surface-container-lowest": "#ffffff",
-                "outline-variant": "#c4c6cd",
-            },
-            "fontFamily": {
-                "headline": ["Work Sans"],
-                "body": ["Inter"],
-            }
-          },
-        },
-      }
-    </script>
-    <style>
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-        .filled-icon { font-variation-settings: 'FILL' 1; }
-        html { scroll-behavior: smooth; }
-    </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grúas Arco Norte</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0f1f3a;
+  --navy-mid:#1a3055;
+  --gold:#e8a020;
+  --gold-light:#f5bb55;
+  --white:#ffffff;
+  --off:#f4f5f7;
+  --gray:#6b7280;
+  --light-gray:#d1d5db;
+}
+body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--navy)}
+
+/* NAV */
+nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.3rem;color:var(--white);letter-spacing:.05em;display:flex;align-items:center;gap:8px}
+.logo span{color:var(--gold)}
+nav ul{list-style:none;display:flex;gap:28px}
+nav ul a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.875rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
+nav ul a:hover{color:var(--white)}
+.nav-cta{background:var(--gold);color:var(--navy)!important;padding:8px 18px;border-radius:4px;font-weight:600!important}
+
+/* HERO */
+.hero{background:var(--navy);padding:80px 5% 70px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;min-height:500px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-10%;top:-20%;width:500px;height:500px;border-radius:50%;background:rgba(232,160,32,.06)}
+.hero-label{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:600}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:3.4rem;line-height:1.05;color:var(--white);font-weight:700;margin-bottom:20px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-sub{color:rgba(255,255,255,.65);font-size:1rem;line-height:1.7;margin-bottom:32px;max-width:420px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:var(--navy);padding:13px 24px;border-radius:4px;font-weight:600;text-decoration:none;font-size:.95rem;display:inline-flex;align-items:center;gap:8px;transition:background .2s}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-outline{border:1.5px solid rgba(255,255,255,.35);color:var(--white);padding:13px 24px;border-radius:4px;font-weight:500;text-decoration:none;font-size:.95rem;display:inline-flex;align-items:center;gap:8px;transition:border-color .2s,color .2s}
+.btn-outline:hover{border-color:var(--white)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);border-radius:6px;overflow:hidden;margin-top:40px}
+.stat{background:rgba(15,31,58,.7);padding:18px 14px;text-align:center}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:1.7rem;font-weight:700;color:var(--gold)}
+.stat-label{font-size:.72rem;color:rgba(255,255,255,.55);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+.hero-truck{display:flex;align-items:center;justify-content:center}
+.truck-badge{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:32px 40px;text-align:center}
+.truck-icon{font-size:72px;margin-bottom:12px;display:block}
+.truck-badge p{color:rgba(255,255,255,.7);font-size:.85rem;line-height:1.5}
+
+/* SECTION COMMON */
+section{padding:72px 5%}
+.section-label{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:16px}
+.section-sub{color:var(--gray);font-size:1rem;line-height:1.7;max-width:520px}
+.divider{width:40px;height:3px;background:var(--gold);margin:16px 0 32px}
+
+/* SERVICIOS */
+#servicios{background:var(--off)}
+.services-header{margin-bottom:48px}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.service-card{background:var(--white);border:1px solid var(--light-gray);border-radius:8px;padding:28px;transition:box-shadow .2s,transform .2s;cursor:default}
+.service-card:hover{box-shadow:0 8px 32px rgba(15,31,58,.1);transform:translateY(-2px)}
+.service-card-icon{width:48px;height:48px;background:var(--navy);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.service-card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.service-card p{color:var(--gray);font-size:.9rem;line-height:1.6}
+.service-tag{display:inline-block;margin-top:12px;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:rgba(232,160,32,.1);padding:4px 10px;border-radius:3px}
+
+/* COBERTURA */
+#cobertura{background:var(--white)}
+.cobertura-layout{display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:start;margin-top:40px}
+.zone-list{display:flex;flex-direction:column;gap:4px}
+.zone-item{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:6px;cursor:pointer;border:1.5px solid transparent;transition:all .2s}
+.zone-item:hover,.zone-item.active{background:var(--off);border-color:var(--gold)}
+.zone-dot{width:10px;height:10px;border-radius:50%;background:var(--light-gray);flex-shrink:0;transition:background .2s}
+.zone-item.active .zone-dot{background:var(--gold)}
+.zone-name{font-weight:600;font-size:.95rem;color:var(--navy)}
+.zone-desc{font-size:.82rem;color:var(--gray);margin-left:22px;margin-top:2px}
+.map-container{border:1px solid var(--light-gray);border-radius:8px;overflow:hidden;position:relative;background:var(--off)}
+.map-legend{display:flex;gap:20px;margin-top:16px;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--gray)}
+.legend-dot{width:10px;height:10px;border-radius:50%}
+
+/* CTA */
+.cta-band{background:var(--navy);padding:64px 5%;text-align:center}
+.cta-band h2{font-family:'Barlow Condensed',sans-serif;font-size:2.6rem;color:var(--white);margin-bottom:12px;font-weight:700}
+.cta-band p{color:rgba(255,255,255,.65);margin-bottom:32px;font-size:1rem}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* CONTACTO */
+#contacto{background:var(--off)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px}
+.contact-info h3{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:16px}
+.contact-detail{display:flex;align-items:flex-start;gap:12px;margin-bottom:20px}
+.contact-detail-icon{width:36px;height:36px;background:var(--navy);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.contact-detail h4{font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:2px}
+.contact-detail p{font-size:.85rem;color:var(--gray)}
+.contact-form{background:var(--white);border-radius:8px;padding:28px;border:1px solid var(--light-gray)}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.8rem;font-weight:600;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 14px;border:1.5px solid var(--light-gray);border-radius:4px;font-family:'Barlow',sans-serif;font-size:.9rem;color:var(--navy);background:var(--white);transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--navy)}
+.form-group textarea{height:96px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn-submit{width:100%;background:var(--navy);color:var(--white);padding:12px;border:none;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.95rem;font-weight:600;cursor:pointer;transition:background .2s}
+.btn-submit:hover{background:var(--navy-mid)}
+
+/* FOOTER */
+footer{background:#080f1e;padding:40px 5% 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:gap;gap:20px}
+.footer-logo{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:var(--white)}
+.footer-logo span{color:var(--gold)}
+footer p{color:rgba(255,255,255,.4);font-size:.8rem}
+
+/* SVG MAP */
+.arco-map{width:100%;height:auto;display:block}
+.zone-path{fill:var(--off);stroke:#fff;stroke-width:1.5;transition:fill .25s}
+.zone-path.highlight{fill:rgba(232,160,32,.3);stroke:var(--gold);stroke-width:2}
+.zone-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;fill:var(--navy);pointer-events:none}
+.route-line{stroke:var(--gold);stroke-width:2.5;fill:none;stroke-dasharray:6 4;stroke-linecap:round}
+.caseta-dot{fill:var(--navy);stroke:var(--gold);stroke-width:2}
+</style>
 </head>
+<body>
 
-<body class="bg-surface font-body text-on-surface">
-
-<nav class="fixed top-0 w-full z-50 bg-[#041627]/85 backdrop-blur-md border-b border-white/5">
-    <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-        <div class="flex items-center gap-3">
-            <span class="text-xl font-black text-white tracking-tight font-headline">GRÚAS ARCO NORTE</span>
-        </div>
-        <div class="hidden md:flex gap-8 items-center">
-            <a class="text-white/80 font-semibold uppercase tracking-widest text-xs hover:text-[#904d00] transition-colors" href="#servicios">Servicios</a>
-            <a class="text-white/80 font-semibold uppercase tracking-widest text-xs hover:text-[#904d00] transition-colors" href="#cobertura">Cobertura</a>
-            <a class="text-white/80 font-semibold uppercase tracking-widest text-xs hover:text-[#904d00] transition-colors" href="#contacto">Contacto</a>
-        </div>
-        <a href="tel:+522221234567" class="bg-secondary text-white px-5 py-2 font-headline font-bold text-sm tracking-tight hover:brightness-110 transition-all">
-            ASISTENCIA 24/7
-        </a>
-    </div>
+<!-- NAV -->
+<nav>
+  <div class="logo">🔶 <span>GRÚAS</span> ARCO NORTE</div>
+  <ul>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#cobertura">Cobertura</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="tel:+522221234567" class="nav-cta">📞 Llamar ahora</a></li>
+  </ul>
 </nav>
 
-<header class="relative h-[90vh] flex items-center overflow-hidden">
-    <div class="absolute inset-0 z-0">
-        <img class="w-full h-full object-cover grayscale-[0.2] contrast-125" src="https://images.unsplash.com/photo-1580698273174-87b633f89a9f?q=80&w=2070&auto=format&fit=crop" alt="Grúa de plataforma profesional"/>
-        <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/70 to-transparent"></div>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-label">Asistencia vial profesional</div>
+    <h1>Cuando más<br>lo necesitas,<br><em>estamos ahí.</em></h1>
+    <p class="hero-sub">Servicio de grúas y asistencia vial en el Circuito Arco Norte. Cobertura en Puebla, Tlaxcala, Hidalgo y Querétaro, las 24 horas del día.</p>
+    <div class="hero-btns">
+      <a href="tel:+522221234567" class="btn-gold">📞 Llamar ahora</a>
+      <a href="https://wa.me/522221234567" class="btn-outline">💬 WhatsApp</a>
     </div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
-        <div class="max-w-3xl">
-            <span class="inline-block font-bold uppercase tracking-[0.2em] text-secondary text-sm mb-4">Resiliencia en el camino</span>
-            <h1 class="font-headline text-5xl md:text-8xl font-black text-white tracking-tighter leading-[0.9] mb-8">
-                Asistencia Vial <br> las 24 Horas.
-            </h1>
-            <div class="flex flex-col sm:flex-row gap-4">
-                <a class="flex items-center justify-center gap-3 bg-secondary hover:brightness-110 text-white px-8 py-5 font-headline font-extrabold text-xl transition-all shadow-2xl" href="tel:+522221234567">
-                    <span class="material-symbols-outlined filled-icon">call</span>
-                    Llamar Ahora
-                </a>
-                <a class="flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-5 font-headline font-extrabold text-xl transition-all" href="https://wa.me/522221234567">
-                    <span class="material-symbols-outlined">chat</span>
-                    WhatsApp
-                </a>
-            </div>
-        </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Disponible</div></div>
+      <div class="stat"><div class="stat-num">&lt;45'</div><div class="stat-label">Tiempo llegada</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Estados</div></div>
     </div>
-</header>
-
-<section class="relative z-20 -mt-10 px-6">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-0.5 bg-outline-variant shadow-2xl">
-        <div class="bg-white p-8 flex items-center gap-6 group hover:bg-secondary transition-all duration-300">
-            <span class="material-symbols-outlined text-secondary group-hover:text-white text-4xl">update</span>
-            <div>
-                <p class="font-bold uppercase text-[10px] tracking-widest text-gray-400 mb-1 group-hover:text-white/70">Disponibilidad</p>
-                <h3 class="font-headline font-bold text-xl group-hover:text-white">365 Días al Año</h3>
-            </div>
-        </div>
-        <div class="bg-white p-8 flex items-center gap-6 group hover:bg-secondary transition-all duration-300">
-            <span class="material-symbols-outlined text-secondary group-hover:text-white text-4xl">verified_user</span>
-            <div>
-                <p class="font-bold uppercase text-[10px] tracking-widest text-gray-400 mb-1 group-hover:text-white/70">Confianza</p>
-                <h3 class="font-headline font-bold text-xl group-hover:text-white">Operadores Certificados</h3>
-            </div>
-        </div>
-        <div class="bg-white p-8 flex items-center gap-6 group hover:bg-secondary transition-all duration-300">
-            <span class="material-symbols-outlined text-secondary group-hover:text-white text-4xl">bolt</span>
-            <div>
-                <p class="font-bold uppercase text-[10px] tracking-widest text-gray-400 mb-1 group-hover:text-white/70">Eficiencia</p>
-                <h3 class="font-headline font-bold text-xl group-hover:text-white">Llegada en < 45 min</h3>
-            </div>
-        </div>
+  </div>
+  <div class="hero-truck">
+    <div class="truck-badge">
+      <span class="truck-icon">🚛</span>
+      <p>Flota moderna<br>Operadores certificados<br>Atención inmediata</p>
     </div>
+  </div>
 </section>
 
-<section id="servicios" class="py-24 px-6 max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-        <div class="lg:col-span-5">
-            <span class="font-bold uppercase text-secondary tracking-widest text-sm mb-4 block">Nuestras Soluciones</span>
-            <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tight mb-8">Equipamiento para cualquier desafío.</h2>
-            <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                Contamos con una flota moderna para el traslado seguro de vehículos ligeros, pesados y maquinaria en toda la zona del Arco Norte.
-            </p>
-            <div class="bg-primary p-8 text-white border-l-8 border-secondary">
-                <h4 class="font-headline font-bold text-xl mb-2 italic">¿Necesitas ayuda inmediata?</h4>
-                <p class="opacity-70 text-sm mb-6">Estamos listos para salir a tu ubicación ahora mismo.</p>
-                <a href="tel:+522221234567" class="block text-center w-full bg-secondary py-4 font-bold tracking-tight hover:scale-[1.02] transition-transform">SOLICITAR GRÚA</a>
-            </div>
-        </div>
-        <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-surface-container-low p-6 border-b-4 border-secondary">
-                <img class="w-full h-48 object-cover mb-6" src="https://images.unsplash.com/photo-1621905252507-b352224ad31e?q=80&w=800" alt="Grúa de plataforma"/>
-                <h3 class="font-headline font-bold text-2xl mb-4">Plataforma Hidráulica</h3>
-                <p class="text-gray-500 text-sm">Ideal para autos nuevos o deportivos. Máxima seguridad sin contacto con el suelo.</p>
-            </div>
-            <div class="bg-surface-container-low p-6 border-b-4 border-secondary md:mt-12">
-                <img class="w-full h-48 object-cover mb-6" src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=800" alt="Grúa de arrastre"/>
-                <h3 class="font-headline font-bold text-2xl mb-4">Grúas de Arrastre</h3>
-                <p class="text-gray-500 text-sm">Rescate en espacios difíciles y traslado de vehículos de carga media.</p>
-            </div>
-        </div>
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="services-header">
+    <div class="section-label">Nuestros servicios</div>
+    <h2 class="section-title">Equipamiento para<br>cualquier desafío</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Contamos con flota moderna para el traslado seguro de vehículos ligeros, pesados y maquinaria en toda la zona del Arco Norte.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-card-icon">🚗</div>
+      <h3>Plataforma hidráulica</h3>
+      <p>Ideal para autos nuevos o deportivos. Máxima seguridad sin contacto con el suelo durante el traslado.</p>
+      <span class="service-tag">Vehículos ligeros</span>
     </div>
+    <div class="service-card">
+      <div class="service-card-icon">🔗</div>
+      <h3>Grúa de arrastre</h3>
+      <p>Rescate en espacios difíciles y traslado de vehículos de carga media. Respuesta rápida en carretera.</p>
+      <span class="service-tag">Carga media</span>
+    </div>
+    <div class="service-card">
+      <div class="service-card-icon">🚚</div>
+      <h3>Vehículos pesados</h3>
+      <p>Equipo especializado para camiones, trailers y maquinaria pesada. Operadores con experiencia comprobada.</p>
+      <span class="service-tag">Carga pesada</span>
+    </div>
+    <div class="service-card">
+      <div class="service-card-icon">⚡</div>
+      <h3>Asistencia en carretera</h3>
+      <p>Corriente, cambio de llanta, combustible y asistencia mecánica básica. Te sacamos del apuro.</p>
+      <span class="service-tag">Emergencia</span>
+    </div>
+  </div>
 </section>
 
-<section id="cobertura" class="py-24 px-6 bg-primary text-white overflow-hidden">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="relative order-2 lg:order-1">
-            <div class="aspect-video bg-white/5 border border-white/10 overflow-hidden shadow-2xl relative">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.2341!2d-98.8!3d19.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDM2JzAwLjAiTiA5OMKwNDgnMDAuMCJX!5e0!3m2!1ses-419!2smx!4v1700000000000" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
-                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div class="w-48 h-48 rounded-full border-4 border-secondary/40 animate-ping"></div>
-                </div>
-            </div>
+<!-- COBERTURA -->
+<section id="cobertura">
+  <div class="section-label">Presencia estratégica</div>
+  <h2 class="section-title">Cubrimos todo el<br>Circuito Arco Norte</h2>
+  <div class="divider"></div>
+  <p class="section-sub">Base estratégica cerca de casetas principales para reducir el tiempo de espera en toda la ruta.</p>
+
+  <div class="cobertura-layout">
+    <div>
+      <div class="zone-list" id="zoneList">
+        <div class="zone-item active" data-zone="puebla" onclick="selectZone('puebla',this)">
+          <div class="zone-dot"></div>
+          <div>
+            <div class="zone-name">Puebla</div>
+            <div class="zone-desc">San Martín Texmelucan · Huejotzingo · Autopista México-Puebla</div>
+          </div>
         </div>
-        <div class="order-1 lg:order-2">
-            <span class="font-bold uppercase text-secondary tracking-widest text-sm mb-4 block">Presencia Estratégica</span>
-            <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tight mb-8">Cubrimos todo el Circuito Arco Norte.</h2>
-            <div class="space-y-8">
-                <div class="flex gap-4">
-                    <span class="material-symbols-outlined text-secondary font-bold">location_on</span>
-                    <div>
-                        <h4 class="font-headline font-bold text-lg">Zonas Principales</h4>
-                        <p class="text-white/60 text-sm">Puebla, Tlaxcala, Hidalgo y Querétaro.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4">
-                    <span class="material-symbols-outlined text-secondary font-bold">timer</span>
-                    <div>
-                        <h4 class="font-headline font-bold text-lg">Rapidez Garantizada</h4>
-                        <p class="text-white/60 text-sm">Base estratégica cerca de casetas para reducir el tiempo de espera.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="zone-item" data-zone="tlaxcala" onclick="selectZone('tlaxcala',this)">
+          <div class="zone-dot"></div>
+          <div>
+            <div class="zone-name">Tlaxcala</div>
+            <div class="zone-desc">Apizaco · Tlaxco · Entronque Arco Norte</div>
+          </div>
         </div>
+        <div class="zone-item" data-zone="hidalgo" onclick="selectZone('hidalgo',this)">
+          <div class="zone-dot"></div>
+          <div>
+            <div class="zone-name">Hidalgo</div>
+            <div class="zone-desc">Tula · Tepeji del Río · Jilotepec</div>
+          </div>
+        </div>
+        <div class="zone-item" data-zone="queretaro" onclick="selectZone('queretaro',this)">
+          <div class="zone-dot"></div>
+          <div>
+            <div class="zone-name">Querétaro</div>
+            <div class="zone-desc">Palmillas · Arroyo Zarco · Caseta Esperanza</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:24px;padding:16px;background:rgba(232,160,32,.08);border-radius:6px;border-left:3px solid var(--gold)">
+        <p style="font-size:.85rem;color:var(--navy);font-weight:600">📍 Base central</p>
+        <p style="font-size:.82rem;color:var(--gray);margin-top:4px;line-height:1.5">Ubicada estratégicamente sobre el Circuito Arco Norte para cubrir todo el trayecto en el menor tiempo posible.</p>
+      </div>
     </div>
+
+    <div>
+      <div class="map-container">
+        <!-- SVG MAP del Arco Norte esquemático -->
+        <svg viewBox="0 0 600 460" class="arco-map" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(15,31,58,.15)"/>
+            </filter>
+          </defs>
+
+          <!-- Fondo -->
+          <rect width="600" height="460" fill="#eef0f3"/>
+
+          <!-- Zonas de estados (formas aproximadas) -->
+          <!-- QUERÉTARO (noroeste) -->
+          <path id="z-queretaro" class="zone-path" d="M40,40 L160,40 L180,80 L170,130 L140,160 L100,170 L60,150 L40,120 Z"/>
+          <!-- HIDALGO (norte) -->
+          <path id="z-hidalgo" class="zone-path" d="M160,40 L300,30 L320,70 L310,120 L290,150 L240,160 L180,150 L170,130 L180,80 Z"/>
+          <!-- TLAXCALA (centro-este) -->
+          <path id="z-tlaxcala" class="zone-path" d="M290,150 L360,140 L390,170 L380,220 L340,240 L290,230 L270,200 L280,170 Z"/>
+          <!-- PUEBLA (sur-este) -->
+          <path id="z-puebla" class="zone-path" d="M270,200 L290,230 L340,240 L380,220 L410,250 L400,310 L360,350 L300,370 L240,350 L200,300 L210,250 L240,220 Z"/>
+          <!-- Área CDMx (referencia) -->
+          <path d="M40,120 L60,150 L100,170 L140,160 L170,130 L180,150 L240,160 L210,200 L170,220 L120,210 L80,190 L50,170 Z" fill="#dde0e6" stroke="#fff" stroke-width="1.5"/>
+          <text x="100" y="190" class="zone-label" fill="#9ca3af" font-size="11">CDMX / EdoMex</text>
+
+          <!-- Ruta Arco Norte (línea punteada dorada) -->
+          <path class="route-line" d="M80,155 Q120,175 160,168 Q200,162 240,160 Q270,158 290,155 Q310,152 330,148 Q350,144 370,152 Q395,162 410,188 Q425,214 415,245 Q405,275 395,295"/>
+          <!-- Extensión hacia Querétaro -->
+          <path class="route-line" d="M80,155 Q70,140 62,120 Q55,100 65,75 Q80,50 110,44"/>
+
+          <!-- Casetas / puntos de referencia -->
+          <circle cx="110" cy="44" r="6" class="caseta-dot"/>
+          <text x="118" y="40" class="zone-label" font-size="10">Palmillas</text>
+          <circle cx="160" cy="90" r="5" class="caseta-dot"/>
+          <text x="168" y="86" class="zone-label" font-size="10">Tepeji</text>
+          <circle cx="240" cy="156" r="5" class="caseta-dot"/>
+          <text x="248" y="152" class="zone-label" font-size="10">Apizaco</text>
+          <circle cx="355" cy="154" r="5" class="caseta-dot"/>
+          <text x="362" y="150" class="zone-label" font-size="10">Tlaxco</text>
+          <circle cx="405" cy="242" r="5" class="caseta-dot"/>
+          <text x="412" y="238" class="zone-label" font-size="10">Entronque</text>
+          <circle cx="395" cy="295" r="6" class="caseta-dot"/>
+          <text x="403" y="291" class="zone-label" font-size="10">S. Martín Tx.</text>
+
+          <!-- Base central -->
+          <circle cx="295" cy="150" r="9" fill="#0f1f3a" stroke="#e8a020" stroke-width="2.5" filter="url(#shadow)"/>
+          <text x="306" y="143" class="zone-label" font-size="10" font-weight="700">Base</text>
+
+          <!-- Etiquetas de estados -->
+          <text x="72" y="90" class="zone-label" font-size="14">QUERÉTARO</text>
+          <text x="200" y="85" class="zone-label" font-size="14">HIDALGO</text>
+          <text x="300" y="200" class="zone-label" font-size="14">TLAXCALA</text>
+          <text x="258" y="290" class="zone-label" font-size="16">PUEBLA</text>
+
+          <!-- Leyenda -->
+          <rect x="10" y="380" width="220" height="72" rx="6" fill="white" fill-opacity=".85"/>
+          <text x="20" y="398" font-family="'Barlow Condensed',sans-serif" font-size="11" font-weight="700" fill="#0f1f3a">LEYENDA</text>
+          <line x1="20" y1="410" x2="50" y2="410" stroke="#e8a020" stroke-width="2.5" stroke-dasharray="6 4"/>
+          <text x="56" y="414" font-family="'Barlow',sans-serif" font-size="10" fill="#6b7280">Circuito Arco Norte</text>
+          <circle cx="32" cy="430" r="5" fill="#0f1f3a" stroke="#e8a020" stroke-width="2"/>
+          <text x="42" y="434" font-family="'Barlow',sans-serif" font-size="10" fill="#6b7280">Punto de referencia</text>
+          <circle cx="32" cy="448" r="7" fill="rgba(232,160,32,.3)" stroke="#e8a020" stroke-width="2"/>
+          <text x="42" y="452" font-family="'Barlow',sans-serif" font-size="10" fill="#6b7280">Zona activa</text>
+
+          <!-- Norte -->
+          <text x="555" y="52" font-family="'Barlow Condensed',sans-serif" font-size="13" font-weight="700" fill="#6b7280" text-anchor="middle">N</text>
+          <line x1="555" y1="32" x2="555" y2="22" stroke="#6b7280" stroke-width="1.5"/>
+          <polygon points="555,20 551,30 555,28 559,30" fill="#6b7280"/>
+        </svg>
+      </div>
+      <div class="map-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--navy)"></div>Base de operaciones</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--gold)"></div>Zona de cobertura</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--light-gray)"></div>Sin cobertura directa</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="contacto" class="py-24 px-6 max-w-3xl mx-auto text-center">
-    <h2 class="font-headline text-3xl md:text-5xl font-black mb-4">¿Necesitas un traslado?</h2>
-    <p class="text-gray-500 mb-12">Para servicios programados o cotizaciones especiales, déjanos tus datos.</p>
-    <form action="https://formspree.io/f/tuemail" method="POST" class="space-y-4 text-left">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input class="w-full bg-surface-container-low border-none border-b-2 border-transparent focus:border-secondary focus:ring-0 px-4 py-4" placeholder="Nombre completo" type="text" name="name" required/>
-            <input class="w-full bg-surface-container-low border-none border-b-2 border-transparent focus:border-secondary focus:ring-0 px-4 py-4" placeholder="Teléfono" type="tel" name="phone" required/>
-        </div>
-        <textarea class="w-full bg-surface-container-low border-none border-b-2 border-transparent focus:border-secondary focus:ring-0 px-4 py-4" placeholder="Describa el servicio (Origen, destino y tipo de auto)" rows="4" name="message"></textarea>
-        <button class="w-full bg-primary text-white py-5 font-headline font-bold tracking-tight hover:brightness-110 transition-all" type="submit">ENVIAR COTIZACIÓN</button>
-    </form>
-</section>
-
-<footer class="bg-primary text-white/40 py-12 px-8 border-t border-white/5">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-        <div>
-            <span class="text-white font-black text-xl font-headline">GRÚAS ARCO NORTE</span>
-            <p class="text-sm mt-2">Resiliencia y seguridad en el camino.</p>
-        </div>
-        <p class="text-xs">© 2026 Grúas Arco Norte. Todos los derechos reservados.</p>
-    </div>
-</footer>
-
-<div class="md:hidden fixed bottom-0 left-0 w-full grid grid-cols-3 gap-1 px-2 py-3 bg-primary/95 backdrop-blur-lg z-50 border-t border-white/10">
-    <a class="flex flex-col items-center justify-center text-white/70 py-2 hover:text-white" href="tel:+522221234567">
-        <span class="material-symbols-outlined mb-1">call</span>
-        <span class="font-headline font-bold text-[10px] uppercase">Llamar</span>
-    </a>
-    <a class="flex flex-col items-center justify-center bg-secondary text-white rounded-lg py-2 shadow-lg" href="https://wa.me/522221234567">
-        <span class="material-symbols-outlined mb-1 filled-icon">chat</span>
-        <span class="font-headline font-bold text-[10px] uppercase">WhatsApp</span>
-    </a>
-    <a class="flex flex-col items-center justify-center text-white/70 py-2 hover:text-white" href="#cobertura">
-        <span class="material-symbols-outlined mb-1">location_on</span>
-        <span class="font-headline font-bold text-[10px] uppercase">Mapa</span>
-    </a>
+<!-- CTA -->
+<div class="cta-band">
+  <h2>¿Estás varado en carretera?</h2>
+  <p>Contáctanos ahora y te enviamos una unidad de inmediato. Disponibles 365 días al año.</p>
+  <div class="cta-btns">
+    <a href="tel:+522221234567" class="btn-gold">📞 Llamar ahora</a>
+    <a href="https://wa.me/522221234567" class="btn-outline">💬 Escribir por WhatsApp</a>
+  </div>
 </div>
 
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-label">Contáctanos</div>
+  <h2 class="section-title">¿Necesitas un traslado<br>programado?</h2>
+  <div class="divider"></div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Información de contacto</h3>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📞</div>
+        <div><h4>Teléfono</h4><p>+52 222 123 4567</p></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">💬</div>
+        <div><h4>WhatsApp</h4><p>+52 222 123 4567</p></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <div><h4>Zona de operación</h4><p>Circuito Arco Norte<br>Puebla · Tlaxcala · Hidalgo · Querétaro</p></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🕐</div>
+        <div><h4>Horario</h4><p>24 horas · 7 días a la semana<br>365 días al año</p></div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;margin-bottom:20px;color:var(--navy)">Solicitar cotización</h3>
+      <div class="form-group">
+        <label>Nombre completo</label>
+        <input type="text" placeholder="Tu nombre"/>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="tel" placeholder="+52 222 ..."/>
+        </div>
+        <div class="form-group">
+          <label>Tipo de servicio</label>
+          <select>
+            <option>Plataforma hidráulica</option>
+            <option>Grúa de arrastre</option>
+            <option>Vehículo pesado</option>
+            <option>Asistencia en carretera</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Descripción del servicio</label>
+        <textarea placeholder="Cuéntanos dónde estás y qué necesitas..."></textarea>
+      </div>
+      <button class="btn-submit">Enviar cotización →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🔶 <span>GRÚAS</span> ARCO NORTE</div>
+  <p>© 2026 Grúas Arco Norte. Todos los derechos reservados.</p>
+  <div style="display:flex;gap:12px">
+    <a href="tel:+522221234567" style="color:var(--gold);text-decoration:none;font-size:.85rem">📞 Llamar</a>
+    <a href="https://wa.me/522221234567" style="color:var(--gold);text-decoration:none;font-size:.85rem">💬 WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+function selectZone(zone, el) {
+  document.querySelectorAll('.zone-item').forEach(i => i.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.zone-path').forEach(p => p.classList.remove('highlight'));
+  const zoneMap = {
+    'puebla': 'z-puebla',
+    'tlaxcala': 'z-tlaxcala',
+    'hidalgo': 'z-hidalgo',
+    'queretaro': 'z-queretaro'
+  };
+  const target = document.getElementById(zoneMap[zone]);
+  if (target) target.classList.add('highlight');
+}
+// Activar Puebla al cargar
+window.addEventListener('load', () => {
+  const pueblaPath = document.getElementById('z-puebla');
+  if (pueblaPath) pueblaPath.classList.add('highlight');
+});
+</script>
 </body>
 </html>
