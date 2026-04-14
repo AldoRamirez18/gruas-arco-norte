@@ -119,6 +119,15 @@ footer p{color:rgba(255,255,255,.4);font-size:.8rem}
 .zone-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;fill:var(--navy);pointer-events:none}
 .route-line{stroke:var(--gold);stroke-width:2.5;fill:none;stroke-dasharray:6 4;stroke-linecap:round}
 .caseta-dot{fill:var(--navy);stroke:var(--gold);stroke-width:2}
+
+/* GALERÍA */
+#galeria{background:var(--white)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:40px}
+.gallery-item{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:1;background:var(--off);border:1px solid var(--light-gray);cursor:pointer;transition:transform .3s,box-shadow .3s}
+.gallery-item:hover{transform:scale(1.02);box-shadow:0 8px 32px rgba(15,31,58,.15)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;color:var(--gray);gap:8px;font-size:.9rem}
+.gallery-placeholder-icon{font-size:36px}
 </style>
 </head>
 <body>
@@ -129,8 +138,9 @@ footer p{color:rgba(255,255,255,.4);font-size:.8rem}
   <ul>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#cobertura">Cobertura</a></li>
+    <li><a href="#galeria">Galería</a></li>
     <li><a href="#contacto">Contacto</a></li>
-    <li><a href="tel:+522221234567" class="nav-cta">📞 Llamar ahora</a></li>
+    <li><a href="tel:+522481263171" class="nav-cta">📞 Llamar ahora</a></li>
   </ul>
 </nav>
 
@@ -141,8 +151,8 @@ footer p{color:rgba(255,255,255,.4);font-size:.8rem}
     <h1>Cuando más<br>lo necesitas,<br><em>estamos ahí.</em></h1>
     <p class="hero-sub">Servicio de grúas y asistencia vial en el Circuito Arco Norte. Cobertura en Puebla, Tlaxcala, Hidalgo y Querétaro, las 24 horas del día.</p>
     <div class="hero-btns">
-      <a href="tel:+522221234567" class="btn-gold">📞 Llamar ahora</a>
-      <a href="https://wa.me/522221234567" class="btn-outline">💬 WhatsApp</a>
+      <a href="tel:+522481263171" class="btn-gold">📞 Llamar ahora</a>
+      <a href="https://wa.me/522481263171" class="btn-outline">💬 WhatsApp</a>
     </div>
     <div class="hero-stats">
       <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Disponible</div></div>
@@ -324,8 +334,8 @@ footer p{color:rgba(255,255,255,.4);font-size:.8rem}
   <h2>¿Estás varado en carretera?</h2>
   <p>Contáctanos ahora y te enviamos una unidad de inmediato. Disponibles 365 días al año.</p>
   <div class="cta-btns">
-    <a href="tel:+522221234567" class="btn-gold">📞 Llamar ahora</a>
-    <a href="https://wa.me/522221234567" class="btn-outline">💬 Escribir por WhatsApp</a>
+    <a href="tel:+522481263171" class="btn-gold">📞 Llamar ahora</a>
+    <a href="https://wa.me/522481263171" class="btn-outline">💬 Escribir por WhatsApp</a>
   </div>
 </div>
 
@@ -339,15 +349,15 @@ footer p{color:rgba(255,255,255,.4);font-size:.8rem}
       <h3>Información de contacto</h3>
       <div class="contact-detail">
         <div class="contact-detail-icon">📞</div>
-        <div><h4>Teléfono</h4><p>+52 222 123 4567</p></div>
+        <div><h4>Teléfono</h4><p>248 126 3171</p></div>
       </div>
       <div class="contact-detail">
         <div class="contact-detail-icon">💬</div>
-        <div><h4>WhatsApp</h4><p>+52 222 123 4567</p></div>
+        <div><h4>WhatsApp</h4><p>248 126 3171</p></div>
       </div>
       <div class="contact-detail">
         <div class="contact-detail-icon">📍</div>
-        <div><h4>Zona de operación</h4><p>Circuito Arco Norte<br>Puebla · Tlaxcala · Hidalgo · Querétaro</p></div>
+        <div><h4>Base central</h4><p>Calle Independencia<br>Colonia Joyas, San Damián 126<br>74059 San Martín Texmelucan de Labastida, Pue.</p></div>
       </div>
       <div class="contact-detail">
         <div class="contact-detail-icon">🕐</div>
@@ -384,13 +394,59 @@ footer p{color:rgba(255,255,255,.4);font-size:.8rem}
   </div>
 </section>
 
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="section-label">Nuestro equipamiento</div>
+  <h2 class="section-title">Galería de grúas<br>y equipos</h2>
+  <div class="divider"></div>
+  <p class="section-sub">Contamos con una flota moderna de vehículos especializados para garantizar el mejor servicio. Conoce nuestras unidades disponibles.</p>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-icon">📷</div>
+        <div>Sube tus fotos</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-icon">📷</div>
+        <div>Grúa 1</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-icon">📷</div>
+        <div>Grúa 2</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-icon">📷</div>
+        <div>Grúa 3</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-icon">📷</div>
+        <div>Plataforma 1</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-icon">📷</div>
+        <div>Plataforma 2</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">🔶 <span>GRÚAS</span> ARCO NORTE</div>
   <p>© 2026 Grúas Arco Norte. Todos los derechos reservados.</p>
   <div style="display:flex;gap:12px">
-    <a href="tel:+522221234567" style="color:var(--gold);text-decoration:none;font-size:.85rem">📞 Llamar</a>
-    <a href="https://wa.me/522221234567" style="color:var(--gold);text-decoration:none;font-size:.85rem">💬 WhatsApp</a>
+    <a href="tel:+522481263171" style="color:var(--gold);text-decoration:none;font-size:.85rem">📞 Llamar</a>
+    <a href="https://wa.me/522481263171" style="color:var(--gold);text-decoration:none;font-size:.85rem">💬 WhatsApp</a>
   </div>
 </footer>
 
