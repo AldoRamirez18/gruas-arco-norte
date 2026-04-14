@@ -46,7 +46,7 @@ nav ul a:hover{color:var(--white)}
 .stat-label{font-size:.72rem;color:rgba(255,255,255,.55);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
 .hero-truck{display:flex;align-items:center;justify-content:center}
 .truck-badge{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:32px 40px;text-align:center}
-.truck-icon{font-size:72px;margin-bottom:12px;display:block}
+  .truck-image{width:180px;max-width:100%;border-radius:12px;margin:0 auto 16px;display:block}
 .truck-badge p{color:rgba(255,255,255,.7);font-size:.85rem;line-height:1.5}
 
 /* SECTION COMMON */
@@ -123,8 +123,7 @@ footer p{color:rgba(255,255,255,.4);font-size:.8rem}
 /* GALERÍA */
 #galeria{background:var(--white)}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:40px}
-.gallery-item{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:1;background:var(--off);border:1px solid var(--light-gray);cursor:pointer;transition:transform .3s,box-shadow .3s}
-.gallery-item:hover{transform:scale(1.02);box-shadow:0 8px 32px rgba(15,31,58,.15)}
+  .gallery-item{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:1;background:var(--off);border:1px solid var(--light-gray);cursor:pointer;transition:transform .3s,box-shadow .3s;min-height:220px}
 .gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
 .gallery-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;color:var(--gray);gap:8px;font-size:.9rem}
 .gallery-placeholder-icon{font-size:36px}
@@ -305,7 +304,7 @@ footer p{color:rgba(255,255,255,.4);font-size:.8rem}
   </div>
   <div class="hero-truck">
     <div class="truck-badge">
-      <span class="truck-icon">🚛</span>
+      <img class="truck-image" src="https://res.cloudinary.com/dkyxi1il5/image/upload/v1776191772/WhatsApp_Image_2026-04-14_at_10.51.46_AM_ypgpln.jpg" alt="Grúa moderna" />
       <p>Flota moderna<br>Operadores certificados<br>Atención inmediata</p>
     </div>
   </div>
